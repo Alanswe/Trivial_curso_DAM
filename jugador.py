@@ -14,5 +14,3 @@ class Jugador():
     @resultado.setter
     def resultado(self, res):
         self.__resultado = res
-
-        
