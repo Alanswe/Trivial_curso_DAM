@@ -5,6 +5,22 @@ class Partida():
         self.__col_preguntas = col_preguntas
         self.__marcador = 0 
     
+    @property
+    def obj_jugador(self):
+        return self.__jugador
+
+    @property
+    def obj_modo(self):
+        return self.__modo
+        
+    @property
+    def preguntas(self):
+        return self.__col_preguntas
+
+    @property
+    def marcador(self):
+        return self.__marcador
+
     def iniciar(self):
         print(self.__jugador)
         print(self.__modo)

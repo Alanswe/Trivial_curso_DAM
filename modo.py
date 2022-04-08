@@ -8,7 +8,6 @@ class Modo():
         self.__tmax_juego = tmax_juego
         self.__tmax_pregunta = tmax_pregunta
 
-
     @property
     def num_preguntas(self):
         return self.__num_preguntas
