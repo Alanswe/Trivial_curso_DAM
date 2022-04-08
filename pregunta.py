@@ -4,3 +4,19 @@ class Pregunta():
         self.__cuerpo = cuerpo
         self.__dificultad = dificultad
         self.__tematica = tematica
+
+    @property
+    def id(self):
+        return self.__id
+
+    @property
+    def cuerpo(self):
+        return self.__cuerpo
+        
+    @property
+    def dificultad(self):
+        return self.__dificultad
+        
+    @property
+    def tematica(self):
+        return self.__tematica
