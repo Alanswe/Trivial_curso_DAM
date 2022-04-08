@@ -21,7 +21,3 @@ class Pregunta():
     @property
     def tematica(self):
         return self.__tematica
-
-    @property
-    def respuesta(self):
-        return self.respuesta
