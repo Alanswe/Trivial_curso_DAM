@@ -4,6 +4,7 @@ class Pregunta():
         self.__cuerpo = cuerpo
         self.__dificultad = dificultad
         self.__tematica = tematica
+        self.respuesta = [] # Colección de objetos respuesta
 
     @property
     def id(self):
@@ -20,3 +21,7 @@ class Pregunta():
     @property
     def tematica(self):
         return self.__tematica
+
+    @property
+    def respuesta(self):
+        return self.respuesta
