@@ -38,12 +38,27 @@ class Sqlite():
         return salida
 
 
+    def borrar(self,tabla,camo_id,valor_id): # Para no dar por supuesto que tenga un compo id
+        consulta = f"delete from {tabla} where {camo_id} = {valor_id}"
+        cnx = self.conectar()
+        cnx.execute(consulta)
+        cnx.commit()
+        cnx.close()
 
-    def insertar(self):
-        pass
+    def insertar(self,tabla, lista_campos, lista_valores):
+        """
+            Añade un nuevo registro a la tabla pasada como parámetro.
+            La lista de cmapos debe tener el mismo número de elementos que la de valores.
+        """
+        cnx = self.conectar()
+        consulta = f"insert into {tabla}({lista_campos}) values({lista_valores})"
+        cursor = cnx.cursor()
+        cursor.execute(consulta)
+        cnx.commit()
+        salida = cursor.lastrowid
+        cnx.close()
+        return salida
 
     def actualizar(self):
         pass
 
-    def borrar(self):
-        pass

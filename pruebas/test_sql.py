@@ -4,12 +4,24 @@ from sql import Sqlite,sqlite3
 class Testsqlite(unittest.TestCase):
 
     def test_exitencia(self):
-        mi_bd = Sqlite('/home/alan/Documentos/GitHub/web_1/personas.db')
+        mi_bd = Sqlite('/home/alan/Documentos/Trivial_curso_DAM/personas.db')
         cnx = mi_bd.conectar()
         self.assertIsNotNone(cnx)
 
     def test_seleccionar(self):
-        mi_bd = Sqlite('/home/alan/Documentos/GitHub/web_1/personas.db')
+        mi_bd = Sqlite('/home/alan/Documentos/Trivial_curso_DAM/personas.db')
         resultado = mi_bd.seleccionar()
-        print(resultado)
         self.assertIsNotNone(resultado)
+
+    def test_borrar(self):
+        mi_bd = Sqlite('/home/alan/Documentos/Trivial_curso_DAM/personas.db')
+        resultado = mi_bd.borrar('articulos','id','46')
+        self.assertIsNone(resultado)
+
+    def test_insertion_articulo(self):
+        mi_bd = Sqlite('/home/alan/Documentos/Trivial_curso_DAM/personas.db')
+        campos = 'codigo, descripcion, precio'
+        valores = '"234234","Nada","123"'
+        resultado = mi_bd.insertar('articulos',campos,valores)
+        self.assertIsNotNone(resultado)
+        
