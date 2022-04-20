@@ -59,6 +59,27 @@ class Sqlite():
         cnx.close()
         return salida
 
-    def actualizar(self):
-        pass
+    def actualizar(self,tabla, lista_campos, lista_valores, valor_id):
+        cnx = self.conectar()
+        consulta = f"update {tabla} set "
 
+        """
+        UPDATE persona SET nombre='Alansitod' WHERE id=1;
+        """
+        tmp = ''
+        campos = lista_campos.split(',')
+        valores = lista_valores.split(',')
+        for i in range(len(valores)):
+            tmp += f"{campos[i]}='{valores[i]}',"
+
+        consulta += tmp[:-1]
+        consulta += f'where id={valor_id};'
+
+
+        cursor = cnx.cursor()
+        cursor.execute(consulta)
+        cnx.commit()
+        salida = cursor.rowcount
+        cnx.close()
+
+        return salida

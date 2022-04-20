@@ -24,4 +24,10 @@ class Testsqlite(unittest.TestCase):
         valores = '"234234","Nada","123"'
         resultado = mi_bd.insertar('articulos',campos,valores)
         self.assertIsNotNone(resultado)
-        
+
+    def test_update(self):
+        mi_bd = Sqlite('/home/alan/Documentos/Trivial_curso_DAM/personas.db')
+        campos = 'codigo, descripcion, precio'
+        valores = '234234,Algo,123'
+        resultado = mi_bd.actualizar('articulos',campos,valores,48)
+        self.assertEqual(resultado,1)
