@@ -10,7 +10,7 @@ class Sqlite():
     - Borrar
     """
 
-    #TODO:  
+    #TODO: hacerlos con un Try
 
     def __init__(self,bd) -> None:
         """
@@ -38,7 +38,7 @@ class Sqlite():
         return salida
 
 
-    def borrar(self,tabla,camo_id,valor_id): # Para no dar por supuesto que tenga un compo id
+    def borrar(self,tabla,camo_id,valor_id): # Para no dar por supuesto que tenga un campo id
         consulta = f"delete from {tabla} where {camo_id} = {valor_id}"
         cnx = self.conectar()
         cnx.execute(consulta)
