@@ -51,7 +51,13 @@ class Sqlite():
             La lista de cmapos debe tener el mismo número de elementos que la de valores.
         """
         cnx = self.conectar()
-        consulta = f"insert into {tabla}({lista_campos}) values({lista_valores})"
+        lista_comillas = []
+        for val in lista_valores.split(','):
+            lista_comillas.append("'"+ val + "'")
+
+        tmp = ','.join(lista_comillas)
+
+        consulta = f"insert into {tabla}({lista_campos}) values({tmp})"
         cursor = cnx.cursor()
         cursor.execute(consulta)
         cnx.commit()

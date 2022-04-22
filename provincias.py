@@ -12,6 +12,13 @@ class Provincia():
     def insertar(self):
         manejador = Sqlite(BD)
         campos = 'codigo,descripcion'
-        valores = f'{self.__codigo},{"self.__descripcion"}'
+        valores = f'{self.__codigo},{self.__descripcion}'
         nuevo_id = manejador.insertar(Provincia.tabla,campos,valores)
+        return nuevo_id
+
+    def actualizar(self):
+        manejador = Sqlite(BD)
+        campos = 'codigo,descripcion'
+        valores = f'{self.__codigo},{self.__descripcion}'
+        nuevo_id = manejador.actualizar(Provincia.tabla,campos,valores,self.__id)
         return nuevo_id

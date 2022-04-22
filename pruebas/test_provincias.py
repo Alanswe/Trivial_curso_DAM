@@ -11,6 +11,11 @@ class Test_provicias(unittest.TestCase):
         self.assertIsNotNone(p)
         
     def test_insert_provincia(self):
-        p = Provincia(111,'Pamplona')
+        p = Provincia(211,'Madrid')
         resp = p.insertar()
+        self.assertIsNotNone(resp)
+
+    def test_actualizar_provincia(self):
+        p = Provincia(662,'Marruecos',5)
+        resp = p.actualizar()
         self.assertIsNotNone(resp)
