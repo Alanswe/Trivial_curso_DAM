@@ -1,5 +1,3 @@
-from re import I
-
 
 class Modo():
     def __init__(self,num_preguntas=10,num_jugadores=1,tmax_juego=600,tmax_pregunta=600) -> None:
