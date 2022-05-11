@@ -1,6 +1,6 @@
 import os
 BASE_DIR = os.path.dirname(__file__)
-BD = os.path.join(BASE_DIR, 'personas.db')
+BD = os.path.join(BASE_DIR, 'trivial.sqlite')
 
 #'/home/alan/Documentos/Trivial_curso_DAM/personas.db'
 
